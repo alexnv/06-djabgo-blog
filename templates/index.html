@@ -70,7 +70,7 @@
                 <img class="card-img rounded-0" src="{{ popular_post.image_url }}" alt="">
               </div>
               <div class="blog__slide__content">
-                <h3><a href="#">{{ popular_post.title }}</a></h3>
+                <h3><a href="{% url 'post_detail' popular_post.slug %}">{{ popular_post.title }}</a></h3>
                 <p>{{ popular_post.published_at }}</p>
               </div>
             </div>
@@ -100,7 +100,7 @@
               <div class="details mt-20">
                 <h3>{{ recent_post.title }}</h3>
                 <p>{{ recent_post.text|truncatechars:200 }}</p>
-                <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                <a class="button" href="{% url 'post_detail' recent_post.slug %}">Read More <i class="ti-arrow-right"></i></a>
               </div>
             </div>
             {% endfor %}
