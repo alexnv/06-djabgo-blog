@@ -3,6 +3,7 @@
   {% block title %} {{ post.title }} - Blog Details {% endblock %}
   {% block content %}
 
+  {% static "img/blog/blog4.png" as blog_thumb %}
 
   <!--================ Hero sm Banner start =================-->
   <section class="mb-30px">
@@ -29,7 +30,7 @@
           <div class="row">
             <div class="col-lg-8">
               <div class="main_blog_details">
-                <img class="img-fluid" src="{% get_static_prefix %}img/blog/blog4.png" alt="blog4">
+                <img class="img-fluid" src="{{ post.image_url|default_if_none:blog_thumb }}" alt="blog4">
                 <h4>{{ post.title }}</h4>
                 <div class="user_details">
                   <div class="mt-sm-0 mt-3">
